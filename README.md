@@ -71,6 +71,84 @@ npm run hermes -- --platform jjwxc
 npm run hermes -- --platform fanqie --genre 历史古代 --hook 经营种田
 ```
 
+## Hermes 使用方式
+
+Hermes 可以把这个项目当成“市场情报 + 写作约束生成器”使用。
+
+推荐流程：
+
+```bash
+npm install
+npm run fetch
+npm run normalize
+npm run opportunities -- --limit 20
+npm run hermes -- --platform fanqie
+```
+
+生成后，让 Hermes 读取：
+
+```text
+reports/opportunities.md
+reports/hermes_brief_fanqie.md
+```
+
+可以给 Hermes 这样的指令：
+
+```text
+请读取 reports/opportunities.md 和 reports/hermes_brief_fanqie.md，
+根据里面的平台、题材、hook、市场证据和写作约束，
+生成 10 个书名候选、5 个一句话卖点、前 20 章主线承诺，
+以及第一章 1500 字开篇。
+
+要求：
+- 不要复制榜单作品的书名、人物、设定或桥段
+- 前 200 字进入压力场景
+- 解释比例控制在 15% 以内
+- 对白承担冲突、信息差或情绪变化
+- 只输出可用正文和创作材料，不要解释创作思路
+```
+
+如果想换平台：
+
+```bash
+npm run hermes -- --platform qidian
+npm run hermes -- --platform jjwxc
+npm run hermes -- --platform qimao
+npm run hermes -- --platform zongheng
+```
+
+如果已经确定赛道：
+
+```bash
+npm run hermes -- --platform fanqie --genre 历史古代 --hook 经营种田
+```
+
+发布后，把作品反馈录回项目：
+
+```bash
+npm run feedback:add -- \
+  --title "作品名" \
+  --platform fanqie \
+  --genre 历史古代 \
+  --hook 经营种田 \
+  --chapters 10 \
+  --words 20000 \
+  --views 1000 \
+  --favorites 80 \
+  --comments 12 \
+  --revenue 35.5
+
+npm run feedback:report
+```
+
+下一轮创作时，可以让 Hermes 同时参考：
+
+```text
+reports/feedback_report.md
+```
+
+这样选题会从“榜单热度判断”逐步变成“榜单热度 + 自己作品真实反馈”的闭环。
+
 ## 发布反馈闭环
 
 发布作品后，手动记录关键数据：
