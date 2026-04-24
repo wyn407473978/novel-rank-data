@@ -1,0 +1,4 @@
+version: 1
+display_name: Novel De-AI Writing
+short_description: Draft and revise Chinese web fiction with lower AI flavor using platform-specific prompting and scene-level anti-AI revision rules.
+default_prompt: Write or revise a Chinese web novel scene for a specific platform so it feels commercially native, less AI-flavored, and more like a human serial novelist.

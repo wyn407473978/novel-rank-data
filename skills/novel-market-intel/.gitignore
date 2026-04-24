@@ -1,0 +1,6 @@
+data/
+reports/
+node_modules/
+__pycache__/
+src/novel_rank_data/__pycache__/
+scripts/__pycache__/

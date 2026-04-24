@@ -1,0 +1,22 @@
+{
+  "name": "novel-rank-data",
+  "version": "1.0.0",
+  "description": "Fetch, normalize, and analyze Chinese web novel ranking data.",
+  "main": "index.js",
+  "scripts": {
+    "fetch": "python3 scripts/fetch_rankings.py --platforms qidian jjwxc fanqie qimao zongheng",
+    "normalize": "python3 scripts/normalize_rankings.py",
+    "brief": "python3 scripts/build_market_brief.py",
+    "delta": "python3 scripts/build_delta_report.py",
+    "opportunities": "python3 scripts/build_opportunity_report.py",
+    "hermes": "python3 scripts/export_hermes_brief.py",
+    "feedback:add": "python3 scripts/record_feedback.py",
+    "feedback:report": "python3 scripts/build_feedback_report.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright-core": "^1.59.1"
+  }
+}

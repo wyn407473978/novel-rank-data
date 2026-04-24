@@ -1,0 +1,8 @@
+[project]
+name = "novel-rank-data"
+version = "0.1.0"
+description = "Fetch, normalize, and summarize Chinese web novel ranking signals."
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

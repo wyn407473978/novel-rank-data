@@ -1,0 +1,4 @@
+version: 1
+display_name: Novel Market Intel
+short_description: Analyze current Chinese web novel trends across platforms and turn ranking signals into actionable writing briefs.
+default_prompt: Research current daily, weekly, and monthly hot novel trends across major Chinese web fiction platforms, then summarize the strongest genre signals, trope clusters, and writing opportunities.
